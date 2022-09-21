@@ -1,21 +1,25 @@
 
 infile = open('sometext.txt', 'r')
-sometext = infile.read()
-
 
 dictionary = {}
 
-text = sometext.split(' ')
-
-for words in text:
+for words in infile:
 
     words = words.lower()
     words = words.replace(',', '')
     words = words.replace('.','')
 
-    counter = text.count(words)
+    text = words.split(' ')
 
-    dictionary[words] = counter
+    for word in text:
+
+        if word in dictionary:
+
+            dictionary[word] += 1
+        
+        else:
+
+            dictionary[word] = 1
 
 
 print(dictionary)
