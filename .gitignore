@@ -2,4 +2,4 @@
 retail_space.csv
 sometext.txt
 info_security.txt
-git rm --cached .DS_Store
+.DS_Store
