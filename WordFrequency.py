@@ -1,24 +1,21 @@
 
 infile = open('sometext.txt', 'r')
+sometext = infile.read()
+
 
 dictionary = {}
 
-for words in infile:
+text = sometext.split(' ')
+
+for words in text:
 
     words = words.lower()
     words = words.replace(',', '')
     words = words.replace('.','')
 
-    characters = words.split(' ')
+    counter = text.count(words)
 
-    for character in characters:
-        if character in dictionary:
-            
-            dictionary[character] += 1
-        
-        else:
-
-            dictionary[character] = 1
+    dictionary[words] = counter
 
 
 print(dictionary)
